@@ -20,7 +20,7 @@ public class MovieStore: MovieService {
     
     public func fetchMovies(from endpoint: Endpoint, params: [String: String]? = nil, successHandler: @escaping (_ response: MoviesResponse) -> Void, errorHandler: @escaping(_ error: Error) -> Void) {
         
-        guard var urlComponents = URLComponents(string: "\(baseAPIURL)/movie/\(endpoint.rawValue)") else {
+        guard var urlComponents = URLComponents(string: "\(baseAPIURL)/movieServiceXXXXX/\(endpoint.rawValue)") else {
             errorHandler(MovieError.invalidEndpoint)
             return
         }
@@ -66,7 +66,7 @@ public class MovieStore: MovieService {
     
     
     public func fetchMovie(id: Int, successHandler: @escaping (_ response: Movie) -> Void, errorHandler: @escaping(_ error: Error) -> Void) {
-        guard let url = URL(string: "\(baseAPIURL)/movie/\(id)?api_key=\(apiKey)&append_to_response=videos,credits") else {
+        guard let url = URL(string: "\(baseAPIURL)/movieserviceXXXX/\(id)?api_key=\(apiKey)&append_to_response=videos,credits") else {
             handleError(errorHandler: errorHandler, error: MovieError.invalidEndpoint)
             return
         }
